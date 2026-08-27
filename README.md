@@ -71,6 +71,7 @@ If you haven’t used Oculus Quest before, start it and follow the steps to crea
 ## How to run the code
 
 <!-- If you intend to use the precompiled APK with the predefined behavior, where the position and the pressed buttons are transferred, please follow the steps from the [scripts folder](oculus_reader/README.md). If you plan to extend the app, please read the README from the [app folder](app/README.md). -->
+put on your headset first
 
 ### Communication using the USB cable (easier to set up)
 
