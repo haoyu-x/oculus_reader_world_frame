@@ -1,0 +1,39 @@
+[project]
+name = "oculus_reader"
+version = "1.0.0"
+description = "Read the controller poses and pressed buttons from an Oculus/Meta Quest headset"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+# pure-python-adb is unmaintained and its regex literals already raise
+# SyntaxWarning on 3.14, so cap the interpreter until that is resolved
+requires-python = ">=3.9,<3.14"
+dependencies = [
+    "numpy",
+    "pure-python-adb",
+]
+
+# Needed by the visualization scripts only, so that `pip install oculus_reader`
+# stays lightweight. `uv run` pulls them in automatically, see [tool.uv] below.
+[dependency-groups]
+viz = [
+    "matplotlib>=3.5",
+    "mujoco==3.2.4",  # match the version tidybot2 pins
+]
+
+[tool.uv]
+default-groups = ["viz"]
+
+[project.scripts]
+oculus-stream-poses = "oculus_reader.stream_world_poses:main"
+oculus-visualize-poses = "oculus_reader.visualize_world_poses:main"
+oculus-visualize-poses-mujoco = "oculus_reader.visualize_world_poses_mujoco:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["oculus_reader"]
+
+[tool.setuptools.package-data]
+oculus_reader = ["APK/teleop-debug.apk"]
