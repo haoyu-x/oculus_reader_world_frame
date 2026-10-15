@@ -82,6 +82,9 @@ put on your headset first
     cd ~/oculus_reader_world_frame
     uv run python oculus_reader/visualize_world_poses_mujoco.py
     ```
+   Left drag orbits, right drag pans, the wheel zooms; V reframes the view, T toggles the
+   controller trails, C clears them, Space pauses and Esc closes. `--demo` shows synthetic
+   motion without a headset, and `--screenshot out.png` saves one frame.
 
 ### Communication over the network (more portable)
 

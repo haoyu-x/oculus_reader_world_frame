@@ -6,7 +6,7 @@ readme = "README.md"
 license = { text = "Apache-2.0" }
 # pure-python-adb is unmaintained and its regex literals already raise
 # SyntaxWarning on 3.14, so cap the interpreter until that is resolved
-requires-python = ">=3.9,<3.14"
+requires-python = ">=3.10,<3.14"
 dependencies = [
     "numpy",
     "pure-python-adb",
@@ -17,7 +17,7 @@ dependencies = [
 [dependency-groups]
 viz = [
     "matplotlib>=3.5",
-    "mujoco==3.2.4",  # match the version tidybot2 pins
+    "mujoco==3.14.0",  # match the version CODA_deisgn locks
 ]
 
 [tool.uv]
